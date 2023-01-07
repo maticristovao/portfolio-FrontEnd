@@ -35,3 +35,25 @@ function closeCollapse(e: JQuery.ClickEvent<Document, null, Document, Document>)
 $(document).click(function (e) {
     closeCollapse(e);
 });
+
+let moreButton = document.querySelector('#more');
+
+
+window.onload = function(){
+    if (window.innerWidth<=1200) {
+        moreButton!.textContent = '...';
+    }else{
+        moreButton!.textContent = 'More';
+    }
+}
+window.onresize = function (){
+    if (window.innerWidth<=1200) {
+        moreButton!.textContent = '...';
+    }else{
+        moreButton!.textContent = 'More';
+    }
+};
+
+function blur(){
+    $(this).blur();
+}

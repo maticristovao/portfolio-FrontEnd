@@ -14,7 +14,6 @@ function notBounce() {
 }
 $('.fab').on('mouseenter', bounce);
 $('.fab').on('mouseleave', notBounce);
-
 let nav = document.querySelector('nav');
 let navMenu = document.querySelector('#navbarSupportedContent');
 let navToggler = document.querySelector('.navbar-toggler');
@@ -33,3 +32,24 @@ function closeCollapse(e) {
 $(document).click(function (e) {
     closeCollapse(e);
 });
+let moreButton = document.querySelector('#more');
+window.onload = function () {
+    if (window.innerWidth <= 1200) {
+        moreButton.textContent = '...';
+    }
+    else {
+        moreButton.textContent = 'More';
+    }
+};
+window.onresize = function () {
+    if (window.innerWidth <= 1200) {
+        moreButton.textContent = '...';
+    }
+    else {
+        moreButton.textContent = 'More';
+    }
+};
+
+function blur(){
+    $(this).blur();
+}

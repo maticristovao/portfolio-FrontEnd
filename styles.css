@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@700&family=Dancing+Script:wght@700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@700&family=Dancing+Script:wght@700&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 *, *::before, *::after{
@@ -30,22 +30,14 @@ header{
 
 
 div.card-icon{
-    padding:0;
     width: fit-content;
     height: fit-content;
     border-radius: 50%;
     box-sizing: border-box;
-    display:flex;
-    align-items: center;
-    justify-content: center;
 }
 div.card-icon a{
-    display: flex;
-    align-items: center;
-    justify-content: center;
     overflow: visible;
     border-radius: 50%;
-    padding: 0;
     text-decoration: none;
     height:fit-content;
     width:fit-content;
@@ -66,19 +58,23 @@ div.card-icon i{
 #login-btn{
     color:#23b3e4;
     border-color: #23b3e4;
-    margin-top: 2px;
-    font-weight: 500;
+    border-width: 2px;
+    font-weight: 400;
+    font-size: 20px;
+    border-radius: 7px;
+    padding:6px 27.5px !important;
+    font-family: 'Poppins', sans-serif;
 }
 #login-btn:hover{
     color:white;
     background-color: #23b3e4;
+    border-color: white
 }
 #login-btn:focus{
     box-shadow: rgb(35 179 228 / 50%) 0px 0px 0px 0.25rem;
 }
 #login-btn:active:focus{
     color:white !important;
-    /* border-color: #23b3e4 !important; */
     box-shadow: rgb(35 179 228 / 50%) 0px 0px 0px 0.25rem;
 }
 .photo-title{
@@ -94,7 +90,7 @@ div.card-icon i{
     background-color: rgb(226, 226, 226);
     font-weight: bold;
     border: .15vw solid;
-    border-radius: .4vw;
+    border-radius: 500px;
     text-transform: uppercase;
 }
 .text-left{
@@ -181,13 +177,13 @@ a.carousel-ctrl:not(:hover):focus .carousel-ctrl-icon{
     justify-self: center;
     font-size: 20px;
 }
-.nav-item a{
+.nav-link{
     transition: color ease-in-out .3s;
     position: relative;
     display: inline-block;
     overflow: hidden;
 }
-.nav-item a::before{
+.nav-link::before{
     position:absolute;
     content: attr(data-content);
     top:40;
@@ -214,7 +210,6 @@ li.nav-item.active a.nav-link{
     font-weight: 600;
 }
 .btn{
-    border-radius: 500px;
     transition: color ease-in-out 0.3s,
                 background-color ease-in-out 0.3s,
                 border-color ease-in-out 0.3s;
@@ -383,16 +378,16 @@ i.fa-terminal{
     position:absolute;
     top: 80%;
     left:auto;
-    right: 110px;
+    right: 150px;
     width:140px;
     backdrop-filter: blur(100px);
 }
 
-@media screen and (width<768px){
+@media screen and (width<992px){
     #media-menu{
         position:fixed;
-        top:23vh;
-        left:100px;
+        top:250px;
+        left:110px;
         right: auto;
     }
     #media-menu.show, #media-menu.collapsing{
@@ -400,11 +395,9 @@ i.fa-terminal{
         justify-content: center;
         align-items: center;
         text-align: center;
-        flex-wrap: wrap;
         width: fit-content;
     }
     div.card-icon i{
-        color: #23b3e4;
         width: 35px;
         height: 35px;
         font-size: 20px;
@@ -424,14 +417,14 @@ i.fa-terminal{
     }
 }
 
-@media screen and (width>=768px){
+@media screen and (width>=992px){
     #media-menu.show, #media-menu.collapsing{
         display: flex;
         justify-content: center;
         align-items: center;
         text-align: center;
         flex-wrap: wrap;
-        border-radius: 40%;
+        border-radius: 400px;
     }
     .dropdown-toggle::after{
         transition: vertical-align ease-in-out 0.3s 0.2s,
@@ -448,7 +441,7 @@ i.fa-terminal{
     }
 }
 
-section{
+article{
     background-color: #afafaf62;
     box-shadow: 0 0 15px #afafaf28;
 }
@@ -514,6 +507,32 @@ section{
     font-weight: 600;
 }
 
+.other-info .info p span a{
+    text-decoration: none;
+    margin-left: 20px;
+    color:white;
+    transition: color ease-in-out .2s;
+}
+.other-info .info p span a:hover{
+    color: #0d6efd !important;
+}
+.other-info .info p span{
+    position: relative;
+}
+.other-info .info p span::before{
+    content: "\00B7";
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    color:white;
+    font-size: 30px;
+    height: 10px;
+    position: absolute;
+    top:5px;
+    left:5px;
+}
+
 .profile-btn{
     font-size: 20px;
     border-radius: 400px;
@@ -523,8 +542,6 @@ section{
 
 @media screen and (width<=1200px){
     #more{
-        /* display: flex; */
-        /* align-items: center; */
         justify-content: center;
         letter-spacing: 3px;
         font-weight: 900;
